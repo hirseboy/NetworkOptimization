@@ -1,0 +1,45 @@
+# Python Bytecode files
+*.pyc
+*.pyo
+__pycache__/
+
+# Virtual Environment
+venv/
+env/
+
+# Flask instance folder (used to store runtime data like logs)
+instance/
+
+# Flask config file (may contain sensitive data like API keys)
+*.env
+
+# PyCharm IDE
+.idea/
+
+# VS Code IDE
+.vscode/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# mypy type checker
+.mypy_cache/
+
+# pytest cache
+.pytest_cache/
+
+# coverage reports
+.coverage
+*.coveragerc
+
+# dotenv environment variables file
+.env
+
+# macOS system files
+.DS_Store
+
+# Windows system files
+Thumbs.db
+
+# Log files
+*.log
