@@ -65,5 +65,5 @@ def create_graph_from_xml():
     for edge in list(G.edges(data=True))[:5]:
         print("Edge:", edge)
 
-    return
+    return G
     
