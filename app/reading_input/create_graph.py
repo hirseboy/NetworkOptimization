@@ -6,6 +6,7 @@ from pathlib import Path
 
 def create_graph_from_xml():
 
+    # data_file_path = Path(__file__).resolve().parents[2] / 'data' / 'simple_graph.vicus'
     data_file_path = Path(__file__).resolve().parents[2] / 'data' / 'testcase01.vicus'
     print(data_file_path)
 
@@ -26,7 +27,8 @@ def create_graph_from_xml():
      # === 1. Extract Nodes ===
     ns = {'IBK': 'http://www.ibk-software.de/IBK'}
     G = nx.Graph()
-
+    consumer=[]
+    source=[]
     for node in root.findall(".//NetworkNode"):
         node_id = node.get("id")
         node_type = node.get("type")
@@ -39,6 +41,13 @@ def create_graph_from_xml():
 
         # Add node with attributes
         G.add_node(node_id, type=node_type, heating_demand=heating_demand)
+
+        if node_type == "SubStation":
+            consumer.append(node_id)
+
+        if node_type == "Source":
+            source.append(node_id)
+
         print("Node: ", node_id)
         print("Type: ",node_type)
         print("Heating Demand :", heating_demand)
@@ -65,5 +74,5 @@ def create_graph_from_xml():
     for edge in list(G.edges(data=True))[:5]:
         print("Edge:", edge)
 
-    return G
+    return G,source,consumer
     
