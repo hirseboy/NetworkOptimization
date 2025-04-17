@@ -11,7 +11,7 @@ def test_solvers_on_files(input_folder="data/test_scenarios"):
         file_path = os.path.join(input_folder, file_name)
         for solver in solvers:
             try:
-                print(f"Testing {solver} on {file_name}...")
+                print(f"\t\t\t============================================Testing {solver} on {file_name}========================")
                 res = find_mass_flux(file_path, solver)
                 results.append(res)
             except Exception as e:
