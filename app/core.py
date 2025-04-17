@@ -1,8 +1,8 @@
 from app.reading_input.create_graph import create_graph_from_xml
 import networkx as nx
 import pulp
-def find_mass_flux():
-    G,sources,consumers = create_graph_from_xml()
+def find_mass_flux(file_path, solver_name):
+    G,sources,consumers = create_graph_from_xml(file_path)
     print("Graph created",G.number_of_nodes(), G.number_of_edges())
     
     heating_demand = {c: G.nodes[c]['heating_demand'] for c in consumers}
@@ -29,7 +29,8 @@ def find_mass_flux():
                 print(f"No path from source {s} to consumer {c}")
 
     print()
-    print(distance)
+    # print(distance)
+    
 
      # Optimization model
     prob = pulp.LpProblem("Heat_Network_MinCostFlow", pulp.LpMinimize)
@@ -51,6 +52,18 @@ def find_mass_flux():
     for s in sources:
         prob += pulp.lpSum(x[s][c] * heating_demand[c] for c in consumers if (s, c) in distance) <= capacities[s]
 
+    # Choose solver
+    if solver_name == "CBC":
+        solver = pulp.PULP_CBC_CMD(msg=True)
+    elif solver_name == "GLPK":
+        solver = pulp.GLPK_CMD(msg=True)
+    elif solver_name == "GUROBI":
+        solver = pulp.GUROBI_CMD(msg=True)
+    elif solver_name == "CPLEX":
+        solver = pulp.CPLEX_CMD(msg=True)
+    else:
+        raise ValueError(f"Unsupported solver: {solver_name}")
+
     # Solve
     prob.solve()
 
@@ -63,3 +76,5 @@ def find_mass_flux():
                 if val > 0:
                     print(f"{s} supplies {val * heating_demand[c]:.1f} to {c} ({val*100:.1f}%) consumer={heating_demand[c]}, source={capacities[s]}")
     print("\nTotal cost:", pulp.value(prob.objective))
+
+    print("Status:", pulp.LpStatus[prob.status])

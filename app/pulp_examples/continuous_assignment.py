@@ -23,6 +23,7 @@ prob = pulp.LpProblem("Minimize_Total_Heat_Cost", pulp.LpMinimize)
 
 # Decision variables: fraction of each consumer's demand fulfilled by each source
 x = pulp.LpVariable.dicts("assign", (sources, consumers), lowBound=0, upBound=1, cat='Continuous')
+print("x: ", x)
 
 # Objective: Minimize total cost = demand * distance * fraction
 prob += pulp.lpSum(x[s][c] * heating_demand[c] * distance[(s, c)] for s in sources for c in consumers)
