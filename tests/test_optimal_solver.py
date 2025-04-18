@@ -11,9 +11,15 @@ def test_solvers_on_files(input_folder="data/test_scenarios"):
         file_path = os.path.join(input_folder, file_name)
         for solver in solvers:
             try:
-                print(f"\t\t\t============================================Testing {solver} on {file_name}========================")
-                res = find_mass_flux(file_path, solver)
-                results.append(res)
+                # print(f"\t\t\t============================================Testing {solver} on {file_name}========================")
+                status, cost = find_mass_flux(file_path, solver)
+                # results.append(res)
+                results.append({
+                    "file": file_name,
+                    "solver": solver,
+                    "status": status,
+                    "total_cost": cost
+                })
             except Exception as e:
                 print(f"Error using {solver} on {file_name}: {e}")
                 results.append({
@@ -21,13 +27,11 @@ def test_solvers_on_files(input_folder="data/test_scenarios"):
                     "solver": solver,
                     "status": "ERROR",
                     "total_cost": None,
-                    "solve_time_sec": None
                 })
 
     print("\n==== Test Summary ====",len(results))
-    # for r in results:
-    #     if r['file'] :
-    #         print(f"{r['file']:25s} | {r['solver']:6s} | Status: {r['status']:9s} | "
-    #           f"Cost: {r['total_cost']:.0f} | Time: {r['solve_time_sec']}s")
+    for r in results:
+        cost = f"{r['total_cost']:.2f}" if r['total_cost'] is not None else "N/A"
+        print(f"{r['file']:25s} | {r['solver']:7s} | {r['status']:10s} | {cost:10s} ")
 
     return results

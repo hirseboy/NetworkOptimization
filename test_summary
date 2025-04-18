@@ -1,0 +1,67 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-8.3.5, pluggy-1.5.0 -- /home/stuti/vicus-cloud/graph-optimization/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /home/stuti/vicus-cloud/graph-optimization
+collecting ... collected 1 item
+
+tests/test_optimal_solver.py::test_solvers_on_files Running solver tests...
+
+data/test_scenarios/testcase04.vicus
+Error using CBC on testcase04.vicus: find_optimal_source() missing 1 required positional argument: 'solver_name'
+data/test_scenarios/testcase04.vicus
+Error using GLPK on testcase04.vicus: find_optimal_source() missing 1 required positional argument: 'solver_name'
+data/test_scenarios/testcase04.vicus
+Error using GUROBI on testcase04.vicus: find_optimal_source() missing 1 required positional argument: 'solver_name'
+data/test_scenarios/testcase04.vicus
+Error using CPLEX on testcase04.vicus: find_optimal_source() missing 1 required positional argument: 'solver_name'
+data/test_scenarios/enough_supply_for_all_nodes.vicus
+Error using CBC on enough_supply_for_all_nodes.vicus: find_optimal_source() missing 1 required positional argument: 'solver_name'
+data/test_scenarios/enough_supply_for_all_nodes.vicus
+Error using GLPK on enough_supply_for_all_nodes.vicus: find_optimal_source() missing 1 required positional argument: 'solver_name'
+data/test_scenarios/enough_supply_for_all_nodes.vicus
+Error using GUROBI on enough_supply_for_all_nodes.vicus: find_optimal_source() missing 1 required positional argument: 'solver_name'
+data/test_scenarios/enough_supply_for_all_nodes.vicus
+Error using CPLEX on enough_supply_for_all_nodes.vicus: find_optimal_source() missing 1 required positional argument: 'solver_name'
+data/test_scenarios/far_nodes_assignment.vicus
+Error using CBC on far_nodes_assignment.vicus: find_optimal_source() missing 1 required positional argument: 'solver_name'
+data/test_scenarios/far_nodes_assignment.vicus
+Error using GLPK on far_nodes_assignment.vicus: find_optimal_source() missing 1 required positional argument: 'solver_name'
+data/test_scenarios/far_nodes_assignment.vicus
+Error using GUROBI on far_nodes_assignment.vicus: find_optimal_source() missing 1 required positional argument: 'solver_name'
+data/test_scenarios/far_nodes_assignment.vicus
+Error using CPLEX on far_nodes_assignment.vicus: find_optimal_source() missing 1 required positional argument: 'solver_name'
+data/test_scenarios/near_not_enough.vicus
+Error using CBC on near_not_enough.vicus: find_optimal_source() missing 1 required positional argument: 'solver_name'
+data/test_scenarios/near_not_enough.vicus
+Error using GLPK on near_not_enough.vicus: find_optimal_source() missing 1 required positional argument: 'solver_name'
+data/test_scenarios/near_not_enough.vicus
+Error using GUROBI on near_not_enough.vicus: find_optimal_source() missing 1 required positional argument: 'solver_name'
+data/test_scenarios/near_not_enough.vicus
+Error using CPLEX on near_not_enough.vicus: find_optimal_source() missing 1 required positional argument: 'solver_name'
+
+==== Test Summary ==== 16
+testcase04.vicus          | CBC     | ERROR      | N/A        
+testcase04.vicus          | GLPK    | ERROR      | N/A        
+testcase04.vicus          | GUROBI  | ERROR      | N/A        
+testcase04.vicus          | CPLEX   | ERROR      | N/A        
+enough_supply_for_all_nodes.vicus | CBC     | ERROR      | N/A        
+enough_supply_for_all_nodes.vicus | GLPK    | ERROR      | N/A        
+enough_supply_for_all_nodes.vicus | GUROBI  | ERROR      | N/A        
+enough_supply_for_all_nodes.vicus | CPLEX   | ERROR      | N/A        
+far_nodes_assignment.vicus | CBC     | ERROR      | N/A        
+far_nodes_assignment.vicus | GLPK    | ERROR      | N/A        
+far_nodes_assignment.vicus | GUROBI  | ERROR      | N/A        
+far_nodes_assignment.vicus | CPLEX   | ERROR      | N/A        
+near_not_enough.vicus     | CBC     | ERROR      | N/A        
+near_not_enough.vicus     | GLPK    | ERROR      | N/A        
+near_not_enough.vicus     | GUROBI  | ERROR      | N/A        
+near_not_enough.vicus     | CPLEX   | ERROR      | N/A        
+PASSED
+
+=============================== warnings summary ===============================
+tests/test_optimal_solver.py::test_solvers_on_files
+  /home/stuti/vicus-cloud/graph-optimization/venv/lib/python3.12/site-packages/_pytest/python.py:163: PytestReturnNotNoneWarning: Expected None, but tests/test_optimal_solver.py::test_solvers_on_files returned [{'file': 'testcase04.vicus', 'solver': 'CBC', 'status': 'ERROR', 'total_cost': None}, {'file': 'testcase04.vicus', 'solver': 'GLPK', 'status': 'ERROR', 'total_cost': None}, {'file': 'testcase04.vicus', 'solver': 'GUROBI', 'status': 'ERROR', 'total_cost': None}, {'file': 'testcase04.vicus', 'solver': 'CPLEX', 'status': 'ERROR', 'total_cost': None}, {'file': 'enough_supply_for_all_nodes.vicus', 'solver': 'CBC', 'status': 'ERROR', 'total_cost': None}, {'file': 'enough_supply_for_all_nodes.vicus', 'solver': 'GLPK', 'status': 'ERROR', 'total_cost': None}, {'file': 'enough_supply_for_all_nodes.vicus', 'solver': 'GUROBI', 'status': 'ERROR', 'total_cost': None}, {'file': 'enough_supply_for_all_nodes.vicus', 'solver': 'CPLEX', 'status': 'ERROR', 'total_cost': None}, {'file': 'far_nodes_assignment.vicus', 'solver': 'CBC', 'status': 'ERROR', 'total_cost': None}, {'file': 'far_nodes_assignment.vicus', 'solver': 'GLPK', 'status': 'ERROR', 'total_cost': None}, {'file': 'far_nodes_assignment.vicus', 'solver': 'GUROBI', 'status': 'ERROR', 'total_cost': None}, {'file': 'far_nodes_assignment.vicus', 'solver': 'CPLEX', 'status': 'ERROR', 'total_cost': None}, {'file': 'near_not_enough.vicus', 'solver': 'CBC', 'status': 'ERROR', 'total_cost': None}, {'file': 'near_not_enough.vicus', 'solver': 'GLPK', 'status': 'ERROR', 'total_cost': None}, {'file': 'near_not_enough.vicus', 'solver': 'GUROBI', 'status': 'ERROR', 'total_cost': None}, {'file': 'near_not_enough.vicus', 'solver': 'CPLEX', 'status': 'ERROR', 'total_cost': None}], which will be an error in a future version of pytest.  Did you mean to use `assert` instead of `return`?
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+========================= 1 passed, 1 warning in 0.11s =========================
