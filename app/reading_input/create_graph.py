@@ -29,6 +29,7 @@ def create_graph_from_xml(data_file_path):
     G = nx.Graph()
     consumer=[]
     source=[]
+    pos={}
     for node in root.findall(".//NetworkNode"):
         node_id = node.get("id")
         node_type = node.get("type")
@@ -48,6 +49,12 @@ def create_graph_from_xml(data_file_path):
         if node_type == "Source":
             source.append(node_id)
 
+        position_elem = node.find("Position")
+        if position_elem is not None:
+            position_text = position_elem.text.strip()
+            x_str, y_str, *_ = position_text.split()
+            x, y = float(x_str), float(y_str)
+            pos[node_id] = (x, y)
         # print("Node: ", node_id)
         # print("Type: ",node_type)
         # print("Heating Demand :", heating_demand)
@@ -74,5 +81,5 @@ def create_graph_from_xml(data_file_path):
     # for edge in list(G.edges(data=True))[:5]:
     #     print("Edge:", edge)
 
-    return G,source,consumer
+    return G,source,consumer,pos
     
