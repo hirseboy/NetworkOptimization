@@ -4,7 +4,7 @@
 
 	<ProjectInfo>
 		<Created>Do. März 6 17:38:39 2025</Created>
-		<LastEdited>Do. März 13 11:37:29 2025</LastEdited>
+		<LastEdited>Do. Apr. 24 11:48:43 2025</LastEdited>
 	</ProjectInfo>
 	<Project>
 		<SolverParameter>
@@ -67,12 +67,12 @@
 			<IBK:Flag name="CreateDefaultZoneOutputs">true</IBK:Flag>
 		</Outputs>
 		<ViewSettings>
-			<CameraTranslation>-35.7477 -52.0835 105.661</CameraTranslation>
+			<CameraTranslation>-28.1132 -90.311 250.235</CameraTranslation>
 			<RotationMatrix>
-				<Wp>0.980674</Wp>
-				<X>0.194976</X>
-				<Y>-0.0109611</Y>
-				<Z>-0.0121661</Z>
+				<Wp>0.980978</Wp>
+				<X>0.19386</X>
+				<Y>-0.00937082</Y>
+				<Z>-0.00420594</Z>
 			</RotationMatrix>
 			<FarDistance>10000</FarDistance>
 			<GridPlanes>
@@ -234,17 +234,17 @@
 					</NetworkNode>
 					<NetworkNode id="75" displayName="sub station" type="Source">
 						<Position>25 30 0</Position>
-						<IBK:Parameter name="MaxHeatingDemand" unit="W">50000</IBK:Parameter>
+						<IBK:Parameter name="MaxHeatingDemand" unit="W">55000</IBK:Parameter>
 						<HydraulicNetworkHeatExchange />
 					</NetworkNode>
 					<NetworkNode id="76" displayName="sub station" type="Source">
 						<Position>40 -20 0</Position>
-						<IBK:Parameter name="MaxHeatingDemand" unit="W">20000</IBK:Parameter>
+						<IBK:Parameter name="MaxHeatingDemand" unit="W">51000</IBK:Parameter>
 						<HydraulicNetworkHeatExchange />
 					</NetworkNode>
 					<NetworkNode id="77" displayName="sub station" type="Source">
 						<Position>-50 -20 0</Position>
-						<IBK:Parameter name="MaxHeatingDemand" unit="W">100000</IBK:Parameter>
+						<IBK:Parameter name="MaxHeatingDemand" unit="W">54000</IBK:Parameter>
 						<HydraulicNetworkHeatExchange />
 					</NetworkNode>
 					<NetworkNode id="110" displayName="sub station" type="SubStation">
@@ -282,6 +282,86 @@
 						<IBK:Parameter name="MaxHeatingDemand" unit="W">0</IBK:Parameter>
 						<HydraulicNetworkHeatExchange />
 					</NetworkNode>
+					<NetworkNode id="267" type="Mixer">
+						<Position>-59 19 0</Position>
+						<IBK:Parameter name="MaxHeatingDemand" unit="W">0</IBK:Parameter>
+						<HydraulicNetworkHeatExchange />
+					</NetworkNode>
+					<NetworkNode id="268" type="Mixer">
+						<Position>-41 -16 0</Position>
+						<IBK:Parameter name="MaxHeatingDemand" unit="W">0</IBK:Parameter>
+						<HydraulicNetworkHeatExchange />
+					</NetworkNode>
+					<NetworkNode id="269" type="Mixer">
+						<Position>-18 -55 0</Position>
+						<IBK:Parameter name="MaxHeatingDemand" unit="W">0</IBK:Parameter>
+						<HydraulicNetworkHeatExchange />
+					</NetworkNode>
+					<NetworkNode id="273" type="Mixer">
+						<Position>-41.5143 -15 0</Position>
+						<IBK:Parameter name="MaxHeatingDemand" unit="W">0</IBK:Parameter>
+						<HydraulicNetworkHeatExchange />
+					</NetworkNode>
+					<NetworkNode id="277" displayName="sub station" type="SubStation">
+						<Position>-17 -40 0</Position>
+						<IBK:Parameter name="MaxHeatingDemand" unit="W">5000</IBK:Parameter>
+						<HydraulicNetworkHeatExchange />
+					</NetworkNode>
+					<NetworkNode id="278" displayName="sub station" type="SubStation">
+						<Position>-31 -45 0</Position>
+						<IBK:Parameter name="MaxHeatingDemand" unit="W">5000</IBK:Parameter>
+						<HydraulicNetworkHeatExchange />
+					</NetworkNode>
+					<NetworkNode id="279" displayName="sub station" type="SubStation">
+						<Position>-16 -47 0</Position>
+						<IBK:Parameter name="MaxHeatingDemand" unit="W">5000</IBK:Parameter>
+						<HydraulicNetworkHeatExchange />
+					</NetworkNode>
+					<NetworkNode id="280" displayName="sub station" type="SubStation">
+						<Position>-2 -51 0</Position>
+						<IBK:Parameter name="MaxHeatingDemand" unit="W">5000</IBK:Parameter>
+						<HydraulicNetworkHeatExchange />
+					</NetworkNode>
+					<NetworkNode id="281" displayName="sub station" type="SubStation">
+						<Position>-31 -56 0</Position>
+						<IBK:Parameter name="MaxHeatingDemand" unit="W">5000</IBK:Parameter>
+						<HydraulicNetworkHeatExchange />
+					</NetworkNode>
+					<NetworkNode id="282" displayName="sub station" type="SubStation">
+						<Position>-40 -1 0</Position>
+						<IBK:Parameter name="MaxHeatingDemand" unit="W">5000</IBK:Parameter>
+						<HydraulicNetworkHeatExchange />
+					</NetworkNode>
+					<NetworkNode id="283" displayName="sub station" type="SubStation">
+						<Position>-56 1 0</Position>
+						<IBK:Parameter name="MaxHeatingDemand" unit="W">5000</IBK:Parameter>
+						<HydraulicNetworkHeatExchange />
+					</NetworkNode>
+					<NetworkNode id="285" type="Mixer">
+						<Position>-24.3054 -44.3083 0</Position>
+						<IBK:Parameter name="MaxHeatingDemand" unit="W">0</IBK:Parameter>
+						<HydraulicNetworkHeatExchange />
+					</NetworkNode>
+					<NetworkNode id="288" type="Mixer">
+						<Position>-25.7302 -41.8922 0</Position>
+						<IBK:Parameter name="MaxHeatingDemand" unit="W">0</IBK:Parameter>
+						<HydraulicNetworkHeatExchange />
+					</NetworkNode>
+					<NetworkNode id="291" type="Mixer">
+						<Position>-20.9844 -49.9395 0</Position>
+						<IBK:Parameter name="MaxHeatingDemand" unit="W">0</IBK:Parameter>
+						<HydraulicNetworkHeatExchange />
+					</NetworkNode>
+					<NetworkNode id="296" type="Mixer">
+						<Position>-46.8915 -4.54422 0</Position>
+						<IBK:Parameter name="MaxHeatingDemand" unit="W">0</IBK:Parameter>
+						<HydraulicNetworkHeatExchange />
+					</NetworkNode>
+					<NetworkNode id="299" type="Mixer">
+						<Position>-51.0516 3.54487 0</Position>
+						<IBK:Parameter name="MaxHeatingDemand" unit="W">0</IBK:Parameter>
+						<HydraulicNetworkHeatExchange />
+					</NetworkNode>
 				</Nodes>
 				<Edges>
 					<NetworkEdge supply="true" idPipe="1" idNode1="50" idNode2="18">
@@ -300,9 +380,9 @@
 						<HydraulicNetworkHeatExchange />
 						<Length>11</Length>
 					</NetworkEdge>
-					<NetworkEdge supply="true" idPipe="1" idNode1="71" idNode2="17">
+					<NetworkEdge supply="true" idPipe="1" idNode1="273" idNode2="17">
 						<HydraulicNetworkHeatExchange />
-						<Length>12</Length>
+						<Length>0.485714</Length>
 					</NetworkEdge>
 					<NetworkEdge supply="true" idPipe="2" idNode1="53" idNode2="22">
 						<HydraulicNetworkHeatExchange />
@@ -416,7 +496,7 @@
 						<HydraulicNetworkHeatExchange />
 						<Length>5</Length>
 					</NetworkEdge>
-					<NetworkEdge idPipe="1" idNode1="147" idNode2="219">
+					<NetworkEdge supply="true" idPipe="1" idNode1="147" idNode2="219">
 						<HydraulicNetworkHeatExchange />
 						<Length>13.4536</Length>
 					</NetworkEdge>
@@ -424,7 +504,7 @@
 						<HydraulicNetworkHeatExchange />
 						<Length>5</Length>
 					</NetworkEdge>
-					<NetworkEdge idPipe="1" idNode1="223" idNode2="220">
+					<NetworkEdge supply="true" idPipe="1" idNode1="223" idNode2="220">
 						<HydraulicNetworkHeatExchange />
 						<Length>14</Length>
 					</NetworkEdge>
@@ -432,9 +512,73 @@
 						<HydraulicNetworkHeatExchange />
 						<Length>10</Length>
 					</NetworkEdge>
-					<NetworkEdge idPipe="1" idNode1="227" idNode2="110">
+					<NetworkEdge supply="true" idPipe="1" idNode1="227" idNode2="110">
 						<HydraulicNetworkHeatExchange />
 						<Length>8</Length>
+					</NetworkEdge>
+					<NetworkEdge supply="true" idPipe="1" idNode1="273" idNode2="268">
+						<HydraulicNetworkHeatExchange />
+						<Length>1.1245</Length>
+					</NetworkEdge>
+					<NetworkEdge supply="true" idPipe="1" idNode1="291" idNode2="269">
+						<HydraulicNetworkHeatExchange />
+						<Length>5.87496</Length>
+					</NetworkEdge>
+					<NetworkEdge supply="true" idPipe="1" idNode1="273" idNode2="71">
+						<HydraulicNetworkHeatExchange />
+						<Length>11.5143</Length>
+					</NetworkEdge>
+					<NetworkEdge supply="true" idPipe="1" idNode1="299" idNode2="267">
+						<HydraulicNetworkHeatExchange />
+						<Length>17.3792</Length>
+					</NetworkEdge>
+					<NetworkEdge supply="true" idPipe="1" idNode1="288" idNode2="285">
+						<HydraulicNetworkHeatExchange />
+						<Length>2.80496</Length>
+					</NetworkEdge>
+					<NetworkEdge idPipe="1" idNode1="285" idNode2="277">
+						<HydraulicNetworkHeatExchange />
+						<Length>8.48114</Length>
+					</NetworkEdge>
+					<NetworkEdge supply="true" idPipe="1" idNode1="268" idNode2="288">
+						<HydraulicNetworkHeatExchange />
+						<Length>30.0595</Length>
+					</NetworkEdge>
+					<NetworkEdge idPipe="1" idNode1="288" idNode2="278">
+						<HydraulicNetworkHeatExchange />
+						<Length>6.11791</Length>
+					</NetworkEdge>
+					<NetworkEdge supply="true" idPipe="1" idNode1="285" idNode2="291">
+						<HydraulicNetworkHeatExchange />
+						<Length>6.53755</Length>
+					</NetworkEdge>
+					<NetworkEdge idPipe="1" idNode1="291" idNode2="279">
+						<HydraulicNetworkHeatExchange />
+						<Length>5.78661</Length>
+					</NetworkEdge>
+					<NetworkEdge idPipe="1" idNode1="269" idNode2="280">
+						<HydraulicNetworkHeatExchange />
+						<Length>16.4924</Length>
+					</NetworkEdge>
+					<NetworkEdge idPipe="1" idNode1="291" idNode2="281">
+						<HydraulicNetworkHeatExchange />
+						<Length>11.7065</Length>
+					</NetworkEdge>
+					<NetworkEdge supply="true" idPipe="1" idNode1="273" idNode2="296">
+						<HydraulicNetworkHeatExchange />
+						<Length>11.7575</Length>
+					</NetworkEdge>
+					<NetworkEdge idPipe="1" idNode1="296" idNode2="282">
+						<HydraulicNetworkHeatExchange />
+						<Length>7.74951</Length>
+					</NetworkEdge>
+					<NetworkEdge supply="true" idPipe="1" idNode1="296" idNode2="299">
+						<HydraulicNetworkHeatExchange />
+						<Length>9.09614</Length>
+					</NetworkEdge>
+					<NetworkEdge idPipe="1" idNode1="299" idNode2="283">
+						<HydraulicNetworkHeatExchange />
+						<Length>5.5644</Length>
 					</NetworkEdge>
 				</Edges>
 				<Origin>0 0 0</Origin>
