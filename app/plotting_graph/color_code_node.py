@@ -1,17 +1,17 @@
 import matplotlib.pyplot as plt
 import networkx as nx
 import matplotlib.cm as cm
-
+import matplotlib.colors as mcolors
 
 def color_nodes_based_on_assignment(assignments, G, sources,pos,file_name,heating_demand):
     # Create a color map based on the assignments
     node_sizes = []
     node_colors = []
-    labels = {}
+    # labels = {}
 
     colormap = cm.get_cmap(
         "tab10", len(sources)
-    )  # We can change 'tab10' to other colormaps
+    ) 
 
     source_to_color = {}
     for i, src_id in enumerate(sources):
@@ -24,19 +24,18 @@ def color_nodes_based_on_assignment(assignments, G, sources,pos,file_name,heatin
         if node_data.get("type") == "Mixer":
             size = 1  # very small
             color = (1, 1, 1)
-            labels[node] = f"{node}"  # format as needed
+            # labels[node] = f"{node}"  # format as needed
 
         elif node_data.get("type") == "Source":
             # color=(0,0,node*100)
             color = source_to_color.get(str(node), (0.5, 0.5, 0.5))
             size = 35  # very large
-            labels[node] = f"{node}"  # format as needed
+            # labels[node] = f"{node}"  # format as needed
 
         else:
             '''
             5000- size 5
             '''
-            labels[node] = f"{node} ={heating_demand[node]/1000}"  
 
             size = heating_demand.get(node, 0)/1000  # medium
             print(node, len(assignments[node]), assignments[node])
@@ -45,31 +44,43 @@ def color_nodes_based_on_assignment(assignments, G, sources,pos,file_name,heatin
             elif len(assignments[node]) > 1:
                 color = (1, 0, 0)
             else:
-                # color=(0,0,list(assignments[node].keys())[0]*100)
                 source_id = list(assignments[node].keys())[0]
                 color = source_to_color.get(str(source_id), (0.5, 0.5, 0.5))
-        # node_sizes.append(size * 100)
-        # print("\t",node_data.get("type"), size)
 
         node_sizes.append(size * 75)
         node_colors.append(color)
+
+    # ----- Handle edge widths and colors -----
+    heat_flows = [data.get("heat_flow", 0) for _, _, data in G.edges(data=True)]
+    if heat_flows:
+        norm = mcolors.Normalize(vmin=min(heat_flows), vmax=max(heat_flows))
+        edge_cmap = cm.get_cmap("plasma")  # or 'hot', 'viridis', etc.
+
+        edge_colors = [edge_cmap(norm(data.get("heat_flow", 0))) for _, _, data in G.edges(data=True)]
+        edge_widths = [max(0.5, data.get("heat_flow", 0) / 5000.0) for _, _, data in G.edges(data=True)]
+    else:
+        edge_colors = "gray"
+        edge_widths = 1
+
+    fig, ax = plt.subplots()  # Step 1: Create figure and ax
+    nx.draw_networkx_nodes(G, pos, node_color=node_colors, node_size=node_sizes,ax=ax)
+    nx.draw_networkx_edges(G, pos, edge_color=edge_colors, width=edge_widths,ax=ax)
+    nx.draw_networkx_labels(G, pos, font_size=10,ax=ax, font_family="serif",font_weight="bold")
+    ax.autoscale() 
+    sm = plt.cm.ScalarMappable(cmap=edge_cmap, norm=norm)
+    sm.set_array([])
+    cbar = fig.colorbar(sm, ax=ax,shrink=0.8)
+    cbar.set_label("Heat Flow (W)", fontsize=12)
     
-    # pos = nx.spring_layout(G)  # We can adjust the layout as needed
-    nx.draw(
-        G,
-        pos,
-        with_labels=True,
-        font_weight="bold",
-        node_size=node_sizes,
-        node_color=node_colors,
-        font_size=7,
-        labels=labels
-    )
-    graph_name=f"network_plot_{file_name}.png"
+    graph_name=f"network_plot_{file_name}_new.png"
+    plt.title(f"Network Graph: {file_name}", fontsize=14)
+    plt.axis("off")
+    plt.tight_layout()
+
     # Save the plot as an image file
     plt.savefig(
         graph_name
-    )  # Save as PNG (you can change the file extension to PDF, SVG, etc.)
+    )  
     plt.show()
 
     plt.close()

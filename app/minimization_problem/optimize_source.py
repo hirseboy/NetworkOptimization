@@ -51,6 +51,8 @@ def find_optimal_source(G,sources,consumers):
     # Solve
     prob.solve()
 
+    print("=========",x)
+
     # Results
     print("\nAssignments:")
     assignments={}
@@ -74,4 +76,4 @@ def find_optimal_source(G,sources,consumers):
     print("Status:", pulp.LpStatus[prob.status])
 
     print(distance)
-    return pulp.LpStatus[prob.status], pulp.value(prob.objective),assignments
+    return pulp.LpStatus[prob.status], heating_demand,assignments

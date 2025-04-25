@@ -10,7 +10,7 @@ def find_mass_flux(file_path, solver_name):
     print(assignments)
 
     assign_heating_demand_to_edges(G,assignments,heating_demand)
-    return
+    # return
     # visualize_heat_network(G,sources,consumers,result[-1])
     graph_name=str(file_path).split("/")[-1].replace(".vicus", "")
     print(graph_name)
