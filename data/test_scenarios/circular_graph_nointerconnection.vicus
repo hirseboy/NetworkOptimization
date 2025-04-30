@@ -372,10 +372,7 @@
 						<HydraulicNetworkHeatExchange />
 						<Length>11</Length>
 					</NetworkEdge>
-					<NetworkEdge supply="true" idPipe="1" idNode1="44" idNode2="18">
-						<HydraulicNetworkHeatExchange />
-						<Length>30.4138</Length>
-					</NetworkEdge>
+					
 				</Edges>
 				<Origin>0 0 0</Origin>
 				<Type>DoublePipe</Type>
