@@ -244,7 +244,7 @@
 					</NetworkNode>
 					<NetworkNode id="77" displayName="sub station" type="Source">
 						<Position>-50 -20 0</Position>
-						<IBK:Parameter name="MaxHeatingDemand" unit="W">34000</IBK:Parameter>
+						<IBK:Parameter name="MaxHeatingDemand" unit="W">50000</IBK:Parameter>
 						<HydraulicNetworkHeatExchange />
 					</NetworkNode>
 					<NetworkNode id="110" displayName="sub station" type="SubStation">
