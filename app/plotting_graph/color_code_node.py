@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import networkx as nx
 import matplotlib.cm as cm
 import matplotlib.colors as mcolors
+from pathlib import Path
 
 def color_nodes_based_on_assignment(assignments, G, sources,pos,file_name,heating_demand):
     # Create a color map based on the assignments
@@ -29,7 +30,7 @@ def color_nodes_based_on_assignment(assignments, G, sources,pos,file_name,heatin
         elif node_data.get("type") == "Source":
             # color=(0,0,node*100)
             color = source_to_color.get(str(node), (0.5, 0.5, 0.5))
-            size = 35  # very large
+            size = 30  # very large
             # labels[node] = f"{node}"  # format as needed
 
         else:
@@ -65,14 +66,18 @@ def color_nodes_based_on_assignment(assignments, G, sources,pos,file_name,heatin
     fig, ax = plt.subplots()  # Step 1: Create figure and ax
     nx.draw_networkx_nodes(G, pos, node_color=node_colors, node_size=node_sizes,ax=ax)
     nx.draw_networkx_edges(G, pos, edge_color=edge_colors, width=edge_widths,ax=ax)
-    nx.draw_networkx_labels(G, pos, font_size=10,ax=ax, font_family="serif",font_weight="bold")
+    nx.draw_networkx_labels(G, pos, font_size=8,ax=ax, font_family="serif",font_weight="bold")
     ax.autoscale() 
     sm = plt.cm.ScalarMappable(cmap=edge_cmap, norm=norm)
     sm.set_array([])
     cbar = fig.colorbar(sm, ax=ax,shrink=0.8)
     cbar.set_label("Heat Flow (W)", fontsize=12)
-    
-    graph_name=f"network_plot_{file_name}_new.png"
+
+
+    output_dir = Path("output")
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    graph_name=output_dir/ f"network_plot_{file_name}.png"
     plt.title(f"Network Graph: {file_name}", fontsize=14)
     plt.axis("off")
     plt.tight_layout()
