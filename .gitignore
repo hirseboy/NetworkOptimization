@@ -45,3 +45,5 @@ Thumbs.db
 *.log
 
 result/*
+app/pulp_examples/*
+app/pulp_examples/binary_assignment_supply.py

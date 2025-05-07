@@ -7,7 +7,7 @@ def find_mass_flux(file_path):
     G,sources,consumers,pos = create_graph_from_xml(file_path)
     # print("Graph created",G.number_of_nodes(), G.number_of_edges())
     result,heating_demand,assignments=find_optimal_source(G,sources,consumers)
-    print(assignments)
+    print(assignments,result)
 
     assign_heating_demand_to_edges(G,assignments,heating_demand)
     # return
