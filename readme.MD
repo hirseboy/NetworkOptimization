@@ -84,4 +84,65 @@ The find_optimal_source() function solves a linear programming optimization prob
 - Constraints:
 
         - Each consumer’s full demand must be met (sum of fractions = 1).
-        - Each source cannot exceed its maximum capacity.
+        - Each source cannot exceed its 
+        
+
+### heating_demand_edges
+        assign_heating_demand_to_edges
+
+1. Initializes all edge 'heat_flow' attributes in the graph to 0.0.
+
+2. Iterates over each consumer-source pair and finds the shortest path between them in the graph.
+   - Assignment variable format is consumer: all source info 
+```json
+
+{
+    "12": {
+        "43": {
+            "fraction": 1.0,
+            "percentage": 100.0,
+            "amount": 5000.0
+        },
+        "44": {
+            "fraction": 1.0,
+            "percentage": 100.0,
+            "amount": 5000.0
+        }
+    },
+   ....
+}
+```
+
+3. Accumulates the assigned heat ('amount') on each edge along the shortest path.
+
+4. Stores the resulting heat flow on each edge under the 'heat_flow' attribute.
+
+### plotting_graph
+
+1. Node Coloring & Sizing:
+
+    - Sources: Colored distinctly based on a colormap (tab10), large in size.
+
+   - Mixers: White and very small.
+
+    - Consumers:
+
+        - White if not assigned any source.
+
+        - Red if assigned to multiple sources.
+
+        - Colored based on the source if assigned to only one.
+
+        - Node sizes are proportional to heating demand.
+
+2. Edge Coloring:
+
+    - Edges are colored using a gradient (plasma colormap) based on their 'heat_flow' attribute.
+
+    - Widths are scaled based on flow magnitude.
+
+3. Legend & Output:
+
+    - A colorbar is added to indicate heat flow levels.
+
+    - The plot is saved as an image under the output/ directory using the provided file_name.

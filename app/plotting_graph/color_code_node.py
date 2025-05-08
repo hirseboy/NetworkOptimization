@@ -17,8 +17,9 @@ def color_nodes_based_on_assignment(assignments, G, sources,pos,file_name,heatin
     source_to_color = {}
     for i, src_id in enumerate(sources):
         source_to_color[str(src_id)] = colormap(i)
-    for node in G.nodes:
 
+
+    for node in G.nodes:
         node_data = G.nodes[node]
 
         # Size scale

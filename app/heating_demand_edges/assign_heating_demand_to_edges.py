@@ -1,11 +1,11 @@
 
 import networkx as nx
-def assign_heating_demand_to_edges(G,assignments,heating_demand):
+def assign_heating_demand_to_edges(G,assignments):
     for u, v in G.edges:
         G[u][v]['heat_flow'] = 0.0
 
     print(G.nodes(data=True))
-
+    
     for consumer, source_info in assignments.items():
         for source, data in source_info.items():
             heat_amount = data['amount']
