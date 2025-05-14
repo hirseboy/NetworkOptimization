@@ -8,7 +8,7 @@
 
 `source venv/bin/activate`
 
-## Running the code
+## Executing the code
 `python3 app.py`
 
 # Code
@@ -30,6 +30,7 @@
 
 ```
 
+### Directories in app/
 ### reading_input
 XML to Network Graph
 
@@ -146,3 +147,23 @@ The find_optimal_source() function solves a linear programming optimization prob
     - A colorbar is added to indicate heat flow levels.
 
     - The plot is saved as an image under the output/ directory using the provided file_name.
+
+### Other directories
+
+### data/test_scenarios
+
+The code runs for all the vicus files in this folder
+
+
+### output
+
+The output network for all the inputs in test_scenarios directory
+
+### tests
+
+Was earlier done to find the best model in python
+
+
+### app.py
+
+Execution starts here!!
